@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.SignUpandSignIn.SignIn">
+      <class name="genericLib.UtilityMethods">
         <methods>
-          <include name="fetchData"/>
-          <include name="signIn"/>
-          <include name="setUp"/>
+          <include name="searchDate"/>
         </methods>
-      </class> <!-- com.SignUpandSignIn.SignIn -->
+      </class> <!-- genericLib.UtilityMethods -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

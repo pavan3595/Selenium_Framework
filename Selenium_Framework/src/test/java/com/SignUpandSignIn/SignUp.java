@@ -21,5 +21,4 @@ public class SignUp extends BaseClass{
 	}
 	
 	
-
 }

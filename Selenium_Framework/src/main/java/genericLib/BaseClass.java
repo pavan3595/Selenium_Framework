@@ -26,7 +26,7 @@ public class BaseClass {
 	@BeforeSuite
 	public void fetchData() throws IOException
 	{
-		FetchingDataFromProp prop = new FetchingDataFromProp();
+		FetchingDataFromExternal prop = new FetchingDataFromExternal();
 		credentials=prop.fetchData();
 		url=(String) credentials.get("url");
 		email=(String) credentials.get("email");
