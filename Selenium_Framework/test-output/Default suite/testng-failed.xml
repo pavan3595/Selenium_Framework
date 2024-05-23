@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="genericLib.UtilityMethods">
+      <class name="com.Flights.Verify_User_is_Able_to_Search_oneWayFlights">
         <methods>
-          <include name="searchDate"/>
+          <include name="signIn"/>
+          <include name="fetchData"/>
+          <include name="searchOneWayFlight"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- genericLib.UtilityMethods -->
+      </class> <!-- com.Flights.Verify_User_is_Able_to_Search_oneWayFlights -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

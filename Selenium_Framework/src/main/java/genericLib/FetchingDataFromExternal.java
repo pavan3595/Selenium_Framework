@@ -48,12 +48,18 @@ public class FetchingDataFromExternal {
 		return credentials;
 	}
 
-	public Map<String, String> fetchDataXlsx() throws IOException {
+	/**
+	 * 
+	 * @param sheetIndex
+	 * @return
+	 * @throws IOException
+	 */
+	public Map<String, String> fetchDataXlsx(int sheetIndex) throws IOException {
 		File file = new File("src/test/resources/externalData/Via.com.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 		Workbook workbook = WorkbookFactory.create(fis);
 
-		String sheetName = workbook.getSheetName(0);
+		String sheetName = workbook.getSheetName(sheetIndex);
 		Sheet sheet = workbook.getSheet(sheetName);
 
 		Map<String, String> dataMap = new HashMap<>();
@@ -68,11 +74,9 @@ public class FetchingDataFromExternal {
 				String columnHeader = headerRow.getCell(cell.getColumnIndex()).getStringCellValue();
 				// Get the cell value
 				String cellValue = cell.toString();
-				System.out.println(cellValue);
 				// Add key-value pair to the map
 				dataMap.put(columnHeader, cellValue);
 			}
-
 		}
 		return dataMap;
 	}

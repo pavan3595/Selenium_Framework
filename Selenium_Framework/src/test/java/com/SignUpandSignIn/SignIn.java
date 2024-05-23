@@ -14,7 +14,7 @@ public class SignIn extends BaseClass{
 		signIn.clickSignIn();
 		signIn.enterEmail(email);
 		signIn.enterPassword(password);
-		//signIn.clickSignInButton();
+		signIn.clickSignInButton();
 	}
 	
 }

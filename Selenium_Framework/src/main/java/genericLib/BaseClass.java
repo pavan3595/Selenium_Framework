@@ -7,21 +7,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+
+import pom.SignInPage;
 
 public class BaseClass {
 	
 	public WebDriver driver;
-	
-	
 	public Map credentials;
 	public String url;
 	public String email;
 	public String password;
 	public String name;
 	public String mobile;
-	
 	
 	@BeforeSuite
 	public void fetchData() throws IOException
@@ -45,10 +45,21 @@ public class BaseClass {
 		driver.get(url); 
 	}
 	
+	
 
-	@AfterTest
-	public void closeBrowser()
+//	@AfterTest
+//	public void closeBrowser()
+//	{
+//		driver.close();
+//	}
+	
+	@BeforeMethod
+	public void signIn()
 	{
-		driver.close();
+		SignInPage signIn = new SignInPage(driver);
+		signIn.clickSignIn();
+		signIn.enterEmail(email);
+		signIn.enterPassword(password);
+		signIn.clickSignInButton();
 	}
 }
